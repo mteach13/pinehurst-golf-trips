@@ -4,6 +4,8 @@
 
 A free, comprehensive website for golfers planning a trip to the Pinehurst area of North Carolina — covering the Village of Pinehurst, Southern Pines, Aberdeen, and surrounding communities. The site combines honest editorial content (course guides, FAQs, dining/lodging recommendations) with a golf-buddy voice that tells you what's actually worth your time and money.
 
+**Domain:** pinehurstgolftrips.com
+
 ### Why This Exists
 
 - **Learning project.** The primary goal is to learn Claude Code, modern web development (Astro), SEO, traffic monitoring, and marketing fundamentals.
@@ -28,7 +30,7 @@ The site author has played: Pinehurst No. 2, No. 3, No. 5, The Cradle, Southern 
 | Interactive (future) | **React** (via Astro islands) | Trip planner tool will need client-side state; React is well-documented for Claude Code |
 | Hosting | **Netlify** (free tier) | Git-based deploys, free SSL, good Astro support, $0/month at low traffic |
 | Content | **Markdown / MDX** | Content lives in the repo as .md files, easy to author and version |
-| Domain | **TBD — must include "Pinehurst"** | .com preferred, short and memorable. Not everyone knows the area as "the Sandhills." Budget ~$12/year. |
+| Domain | **pinehurstgolftrips.com** | Includes "Pinehurst" for search relevance. .com for credibility. ~$11/year. |
 
 ---
 
@@ -39,31 +41,64 @@ The site author has played: Pinehurst No. 2, No. 3, No. 5, The Cradle, Southern 
 ```
 /                        → Homepage (hero, value prop, quick links to main sections)
 /courses                 → All courses on one page, organized by tier, sticky side nav
-/guide                   → First-timer's guide (how to book resort vs. off-resort, logistics, tips)
+/guide                   → First-timer's guide + FAQ combined (guide narrative up top, FAQ section with schema markup at bottom)
 /stay                    → Where to stay (resort, vacation rentals, hotels, budget options)
 /eat                     → Where to eat (by vibe: post-round casual, nice dinner, breakfast)
-/faq                     → Frequently asked questions (with FAQ schema markup)
+/contact                 → Ask a question / suggestion form (Netlify form handling, emails to site owner)
 /about                   → About the site and the author
 ```
+
+---
+
+## Design
+
+### Typography
+
+- **Sans-serif only by default.** Use a clean sans-serif font for all text — headings, body, nav, everything. Reference the Pinehurst resort website (pinehurst.com) for the general feel: modern, clean, confident.
+- **No serif fonts unless intentionally introduced later** for a specific design element. Do not default to serif headings.
+
+### Color Palette
+
+| Color | Hex (approximate) | Role |
+|-------|-------------------|------|
+| Cream / Off-white | `#F2EFE4` | Primary background |
+| Dark green (near-black) | `#2A2C1A` | Body text, high-contrast elements |
+| Olive green | `#4A5A1A` | Headings, accent elements, section dividers |
+| Steel blue | `#8A9BB5` | Links, interactive elements, hover states |
+| Dusty blue | `#7A8FAA` | Secondary accents, borders, subtle UI elements |
+
+### Accessibility Requirements
+
+- **WCAG 2.1 AA compliance is required.** All text must meet minimum contrast ratios.
+- **Body text:** Must achieve 4.5:1 contrast ratio against its background. Use dark green on cream (or cream on dark green for inverted sections). Never use olive or blue for small body text on cream — they will fail contrast.
+- **Large headings (18pt+ or 14pt+ bold):** Must achieve 3:1 contrast ratio. Olive on cream is acceptable for large headings only.
+- **Interactive elements:** Links and buttons using the blue tones must have sufficient contrast. Consider darkening the blue slightly for text links if needed.
+- **General rule:** The blues and olive are for decorative elements, large headings, borders, buttons, and hover states. The heavy lifting of readability stays with dark green on cream.
+- **Test all color combinations** with a contrast checker (e.g., WebAIM Contrast Checker) before shipping.
 
 ### Design Principles
 
 - **Single courses page.** All courses live on one page with a sticky left-side nav that scrolls to each course section on click. No separate pages for each course — keeps it scannable, keeps people on the page (good for SEO dwell time), and avoids thin pages.
 - **Content-first layout.** Generous whitespace, no sidebar clutter, mobile-first responsive.
 - **No stock-photo carousels, no popup modals, no "Book Now" pressure.**
-- **Warm editorial aesthetic.** Longleaf pine greens, sand/warm neutrals, deep navy accents. Refined serif for headings, clean sans-serif for body.
+- **Warm editorial aesthetic.** Clean and modern, not corporate or generic.
+
+### Homepage Specifics
+
+- **Hero section:** Full-width background image (author's own photography from Pinehurst) with a semi-transparent dark overlay for text contrast. White headline text over the image. CTA button linking to /guide.
+- **Do NOT include a "Why the Sandhills" section.** Keep the homepage focused: hero, value prop cards, and quick links to main sections.
 
 ---
 
 ## Course Tiers
 
-Courses are organized into tiers on the /courses page. Each tier has a name, a brief intro explaining what unifies the courses in it, and then individual course sections.
+Courses are organized into tiers on the /courses page. Each tier has a name, a brief intro explaining what unifies the courses in it, and then individual course sections. The sticky side nav lists tiers and courses for quick navigation.
 
-### The Main Event
+### Championship Course (The Main Event)
 **Pinehurst No. 2**
 The reason most people come. Donald Ross masterpiece, U.S. Open anchor site (2024, 2029, 2035, 2041, 2047). Crowned greens, iconic bunkering, walking with a caddie is the way to do it. Requires resort stay (minimum 2 nights). Book 12+ months out. $$$$ with a $250 premium on top of package rates. Green fees roughly $300-600 depending on season.
 
-### The A-List
+### Premier Courses (The A-List)
 Courses that would be the centerpiece of a golf trip anywhere else. At Pinehurst they share the stage with No. 2.
 
 - **Pinehurst No. 4** — Gil Hanse redesign, bold and modern, pot bunkers, excellent conditioning. Resort course.
@@ -73,21 +108,21 @@ Courses that would be the centerpiece of a golf trip anywhere else. At Pinehurst
 - **Mid Pines Inn & Golf Club** — Another Ross design, vintage feel, top 25-30 in North Carolina. Lodge stay available. Part of the Pine Needles family.
 - **Tobacco Road Golf Club** — Mike Strantz design. Polarizing, dramatic, unlike anything you've played. Towering sandhills, blind shots, massive bunkers. Love-it-or-hate-it but everyone should play it once.
 
-### Strong Plays
+### Great Resort Courses (Strong Plays)
 Excellent courses that round out a trip. You won't regret playing any of these.
 
 - **Pinehurst No. 8** — Tom Fazio design, player-friendly with elevated tees and wide fairways. Consistently ranked in Golf Digest's Top 100 Public. Resort course.
 - **Pinehurst No. 3** — Shortest resort course, but a great warmup for No. 2. Tiny elevated greens demand precision and sharpen your short game before tackling the crowned greens of No. 2. Donald Ross design.
 - **The Cradle** — 9-hole short course designed by Gil Hanse. Holes range 60-130 yards. The most fun you can have with your buddies at Pinehurst. Walk-up play available (don't have to be a resort guest).
 
-### Local Picks
+### Area Courses Worth Playing (Local Picks)
 Off-resort courses that are well-regarded and offer good value. These are the courses locals and repeat visitors know about.
 
 - **Mid South Club** — Arnold Palmer design, part of the Talamore Resort family. Attractive setting with longleaf pines and lakes. Accessible via stay-and-play packages.
 - **Talamore Golf Club** — Rees Jones design, consistently ranked among the top public courses in NC. Known for its stay-and-play packages and (formerly) its llama caddies.
 - **Tot Hill Farm** — Mike Strantz design, about 45 minutes from Pinehurst. If you loved Tobacco Road, this is more Strantz creativity. Dramatic elevation changes. Worth the drive.
 
-### Fill Your Card
+### More Options (Fill Your Card)
 If you're staying 4+ days and want to play as much as possible, these courses round out a longer trip.
 
 - **Pinehurst No. 9** — Ranked ~35th in NC. Solid resort course, a step below No. 8.
@@ -99,7 +134,7 @@ If you're staying 4+ days and want to play as much as possible, these courses ro
 - **Longleaf Golf & Family Club** — Dan Maples design, described as the "most playable course in the Sandhills."
 - **Hyland Golf Club** — Highest elevation in the area, sparkling water features, affordable.
 
-### The 19th Hole
+### Don't Skip This (The 19th Hole)
 **Thistle Dhu Putting Course**
 Free. 18 holes. No greens fees. Grab a putter, grab a drink, and walk up. Designed by Gil Hanse in front of the main clubhouse verandah. Inspired by the original 1916 Thistle Dhu — widely considered America's first miniature golf course. The name is a play on "this'll do." Don't skip it. It's the kind of thing that turns a good trip into a great story.
 
@@ -126,7 +161,7 @@ Free. 18 holes. No greens fees. Grab a putter, grab a drink, and walk up. Design
 
 ### Technical SEO (Built into Astro)
 - Static HTML = fast load times = good Core Web Vitals
-- FAQ schema markup (JSON-LD) on /faq page
+- FAQ schema markup (JSON-LD) on the /guide page's FAQ section
 - Open Graph + Twitter Card meta tags on all pages
 - Sitemap via @astrojs/sitemap
 - Descriptive, keyword-rich URLs
@@ -147,17 +182,17 @@ Free. 18 holes. No greens fees. Grab a putter, grab a drink, and walk up. Design
 ## Phasing
 
 ### Phase 1 — Launch
-- Homepage
+- Homepage (hero image, value prop cards, quick links)
 - Courses page (all tiers, sticky nav)
-- First-timer's guide (includes booking info for resort vs. off-resort)
-- FAQ page (with schema markup)
+- Guide page (first-timer's guide + FAQ with schema markup)
+- Contact page (simple form: name, email, message — Netlify form handling)
 - About page
 
 ### Phase 2 — Depth
 - Where to stay
 - Where to eat
 - Expanded course descriptions with more detail
-- Images / photography
+- Additional photography
 
 ### Phase 3 — Interactive (separate project)
 - Trip planner tool (React island or standalone app)
@@ -165,6 +200,9 @@ Free. 18 holes. No greens fees. Grab a putter, grab a drink, and walk up. Design
 - Generates a custom day-by-day itinerary
 - No backend — all client-side logic
 - No login, no paywall
+
+### Phase 4 — Community (future)
+- Evolve contact page into a Q&A or forum where visitors can ask and answer questions
 
 ---
 
@@ -183,30 +221,32 @@ Free. 18 holes. No greens fees. Grab a putter, grab a drink, and walk up. Design
 
 1. **Install Node.js** — Download from nodejs.org (LTS version). Required for Astro and Claude Code.
 2. **Install Claude Code** — Follow Anthropic's install instructions.
-3. **Open your terminal** — Mac: Terminal app or iTerm. Windows: PowerShell or Windows Terminal.
-4. **Create a project folder** — `mkdir pinehurst-golf && cd pinehurst-golf`
-5. **Place this CLAUDE.md in the project root** — Claude Code reads it automatically for context.
+3. **Open your terminal** — Mac: Terminal app or iTerm.
+4. **Navigate to project** — `cd ~/pinehurst-golf-trips`
+5. **This CLAUDE.md is in the project root** — Claude Code reads it automatically for context.
 
 ### Key Commands
 ```bash
-npm create astro@latest    # Scaffold the Astro project
 npm run dev                # Start local dev server
 npm run build              # Build for production
-# Deploy via Git push to Netlify (configured once)
+git add -A                 # Stage all changes
+git commit -m "message"    # Commit with a description
+git push                   # Push to GitHub
+# Netlify deploys automatically from GitHub once connected
 ```
 
-### Expected Project Structure
+### Project Structure
 ```
-pinehurst-golf/
+pinehurst-golf-trips/
 ├── CLAUDE.md
 ├── src/
 │   ├── pages/
 │   │   ├── index.astro
 │   │   ├── courses.astro
 │   │   ├── guide.astro
+│   │   ├── contact.astro
 │   │   ├── stay.astro          (Phase 2)
 │   │   ├── eat.astro           (Phase 2)
-│   │   ├── faq.astro
 │   │   └── about.astro
 │   ├── components/
 │   │   ├── Header.astro
@@ -222,6 +262,7 @@ pinehurst-golf/
 │   └── styles/
 │       └── global.css
 ├── public/
+│   └── images/                 (author's own photography)
 ├── astro.config.mjs
 ├── tailwind.config.mjs
 └── package.json

@@ -1,1 +1,69 @@
 @import "tailwindcss";
+
+@theme {
+  --color-cream: #F2EFE4;
+  --color-dark-green: #2A2C1A;
+  --color-olive: #4A5A1A;
+  --color-steel-blue: #8A9BB5;
+  --color-dusty-blue: #7A8FAA;
+  --color-link: #4A6080;
+
+  --font-sans: 'Lato', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Josefin Sans', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-dark-green);
+    background-color: var(--color-cream);
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+}
+
+/* Only underline links inside prose/content areas */
+.prose a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--color-dark-green);
+}
+
+/* Subtle scrollbar for the course sidebar nav */
+.course-nav-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+
+.course-nav-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.course-nav-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-dark-green);
+  opacity: 0.15;
+  border-radius: 3px;
+}
+
+.course-nav-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(42, 44, 26, 0.15) transparent;
+}

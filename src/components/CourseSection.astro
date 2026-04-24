@@ -1,0 +1,74 @@
+---
+interface Props {
+  name: string;
+  slug: string;
+  designer: string;
+  played: boolean;
+  price: string;
+  description: string;
+  details: string;
+  tags: string[];
+  image?: string;
+  imageAlt?: string;
+  imagePosition?: string;
+}
+
+const { name, slug, designer, played, price, description, details, tags, image, imageAlt, imagePosition } = Astro.props;
+
+const isResort = tags.includes('Resort course');
+---
+
+<article id={slug} class="course-card scroll-mt-28" data-price={price} data-location={isResort ? 'resort' : 'off-resort'}>
+  <div class="bg-white border border-dark-green/10 rounded-lg overflow-hidden">
+    {image && (
+      <img
+        src={image}
+        alt={imageAlt || `${name} golf course`}
+        class="w-full h-48 md:h-56 object-cover"
+        style={imagePosition ? `object-position: ${imagePosition}` : undefined}
+        loading="lazy"
+      />
+    )}
+    <div class="p-6 md:p-8">
+    {/* Header */}
+    <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold text-dark-green">{name}</h3>
+        <p class="text-sm text-dark-green/60 mt-1">Designed by {designer}</p>
+      </div>
+      <div class="flex items-center gap-2 flex-shrink-0 whitespace-nowrap">
+        <span class="text-sm font-semibold text-olive">{price}</span>
+        {played ? (
+          <span class="inline-flex items-center gap-1 text-xs font-medium bg-olive/10 text-olive px-2.5 py-1 rounded-full">
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Played it
+          </span>
+        ) : (
+          <span class="inline-flex items-center text-xs font-medium bg-dark-green/5 text-dark-green/50 px-2.5 py-1 rounded-full">
+            Research-based
+          </span>
+        )}
+      </div>
+    </div>
+
+    {/* Description */}
+    <p class="text-dark-green/80 leading-relaxed">{description}</p>
+
+    {/* Details */}
+    <p class="mt-4 text-sm text-dark-green/70 leading-relaxed">{details}</p>
+
+    {/* Tags */}
+    {tags.length > 0 && (
+      <div class="mt-5 flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <span class="text-xs text-dark-green/50 border border-dark-green/10 px-2.5 py-1 rounded-full">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+    </div>
+  </div>
+</article>

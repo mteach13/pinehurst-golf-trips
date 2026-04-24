@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CourseNav from '../components/CourseNav.astro';
+import CourseSection from '../components/CourseSection.astro';
+import courseTiers from '../data/courses.json';
+---
+
+<BaseLayout
+  title="Best Golf Courses Near Pinehurst — Complete Course Guide"
+  description="Every course worth playing in the Pinehurst area, organized by tier. Honest reviews, real prices, and opinionated rankings for planning your Sandhills golf trip."
+>
+  {/* Page header */}
+  <section class="pt-28 pb-12 md:pt-32 md:pb-16 px-6">
+    <div class="mx-auto max-w-5xl">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-green">
+        Course Guide
+      </h1>
+      <p class="mt-4 text-lg text-dark-green/70 max-w-2xl leading-relaxed">
+        20+ courses in the Pinehurst area, organized from the must-plays to the fill-your-card options.
+        Honest takes, real prices, and clear labels on what I've played versus what I'm summarizing from research.
+      </p>
+
+      {/* Price tier legend */}
+      <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-dark-green/60">
+        <span class="font-semibold text-dark-green/80">Price guide:</span>
+        <span><strong class="text-olive">$</strong> = under $75</span>
+        <span><strong class="text-olive">$$</strong> = $75–150</span>
+        <span><strong class="text-olive">$$$</strong> = $150–300</span>
+        <span><strong class="text-olive">$$$$</strong> = $300+</span>
+      </div>
+
+      {/* Filters */}
+      <div class="mt-6 flex flex-wrap items-center gap-3" id="course-filters">
+        <span class="text-sm font-semibold text-dark-green/60 mr-1">Filter:</span>
+
+        <button data-filter="price" data-value="$" class="filter-btn text-xs font-medium border border-dark-green/15 text-dark-green/60 px-3 py-1.5 rounded-full hover:border-olive/40 transition-colors">
+          $
+        </button>
+        <button data-filter="price" data-value="$$" class="filter-btn text-xs font-medium border border-dark-green/15 text-dark-green/60 px-3 py-1.5 rounded-full hover:border-olive/40 transition-colors">
+          $$
+        </button>
+        <button data-filter="price" data-value="$$$" class="filter-btn text-xs font-medium border border-dark-green/15 text-dark-green/60 px-3 py-1.5 rounded-full hover:border-olive/40 transition-colors">
+          $$$
+        </button>
+        <button data-filter="price" data-value="$$$$" class="filter-btn text-xs font-medium border border-dark-green/15 text-dark-green/60 px-3 py-1.5 rounded-full hover:border-olive/40 transition-colors">
+          $$$$
+        </button>
+
+        <span class="w-px h-5 bg-dark-green/10 mx-1"></span>
+
+        <button data-filter="location" data-value="resort" class="filter-btn text-xs font-medium border border-dark-green/15 text-dark-green/60 px-3 py-1.5 rounded-full hover:border-olive/40 transition-colors">
+          Resort
+        </button>
+        <button data-filter="location" data-value="off-resort" class="filter-btn text-xs font-medium border border-dark-green/15 text-dark-green/60 px-3 py-1.5 rounded-full hover:border-olive/40 transition-colors">
+          Off-resort
+        </button>
+
+        <button id="clear-filters" class="hidden text-xs font-medium text-olive underline underline-offset-2 ml-2">
+          Clear all
+        </button>
+      </div>
+
+      {/* No results message */}
+      <p id="no-results" class="hidden mt-8 text-dark-green/50 text-sm">
+        No courses match the selected filters.
+      </p>
+    </div>
+  </section>
+
+  {/* Two-column layout */}
+  <section class="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
+    <div class="flex gap-12">
+      {/* Sticky side nav — desktop only */}
+      <aside class="max-lg:hidden w-56 flex-shrink-0">
+        <CourseNav />
+      </aside>
+
+      {/* Course content */}
+      <div class="flex-1 min-w-0" id="course-content">
+        {courseTiers.map((tier, tierIndex) => (
+          <section id={tier.slug} class:list={["tier-section scroll-mt-24", tierIndex > 0 && "mt-16"]}>
+            {/* Tier heading */}
+            <div class="tier-heading mb-8">
+              <p class="text-xs font-semibold uppercase tracking-widest text-olive mb-1">
+                {tier.tierSubtitle}
+              </p>
+              <h2 class="text-2xl md:text-3xl font-bold text-dark-green">
+                {tier.tier}
+              </h2>
+              <p class="mt-3 text-dark-green/70 leading-relaxed">
+                {tier.intro}
+              </p>
+            </div>
+
+            {/* Courses in tier */}
+            <div class="space-y-6">
+              {tier.courses.map((course) => (
+                <CourseSection
+                  name={course.name}
+                  slug={course.slug}
+                  designer={course.designer}
+                  played={course.played}
+                  price={course.price}
+                  description={course.description}
+                  details={course.details}
+                  tags={course.tags}
+                  image={course.image}
+                  imageAlt={course.imageAlt}
+                  imagePosition={course.imagePosition}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const filters: Record<string, Set<string>> = {
+    price: new Set(),
+    location: new Set(),
+  };
+
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const clearBtn = document.getElementById('clear-filters');
+  const noResults = document.getElementById('no-results');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.filter!;
+      const value = btn.dataset.value!;
+
+      if (filters[category].has(value)) {
+        filters[category].delete(value);
+        btn.classList.remove('bg-olive', 'text-white', 'border-olive');
+        btn.classList.add('text-dark-green/60', 'border-dark-green/15');
+      } else {
+        filters[category].add(value);
+        btn.classList.add('bg-olive', 'text-white', 'border-olive');
+        btn.classList.remove('text-dark-green/60', 'border-dark-green/15');
+      }
+
+      applyFilters();
+    });
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    filters.price.clear();
+    filters.location.clear();
+    buttons.forEach((btn) => {
+      btn.classList.remove('bg-olive', 'text-white', 'border-olive');
+      btn.classList.add('text-dark-green/60', 'border-dark-green/15');
+    });
+    applyFilters();
+  });
+
+  function applyFilters() {
+    const hasActiveFilters = filters.price.size > 0 || filters.location.size > 0;
+    clearBtn?.classList.toggle('hidden', !hasActiveFilters);
+
+    const cards = document.querySelectorAll<HTMLElement>('.course-card');
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const cardPrice = card.dataset.price || '';
+      const cardLocation = card.dataset.location || '';
+
+      // Always show courses with non-standard pricing (e.g. "Free")
+      const exempt = !['$', '$$', '$$$', '$$$$'].includes(cardPrice);
+      if (exempt) { visibleCount++; return; }
+
+      const matchesPrice = filters.price.size === 0 || filters.price.has(cardPrice);
+      const matchesLocation = filters.location.size === 0 || filters.location.has(cardLocation);
+      const visible = matchesPrice && matchesLocation;
+
+      card.style.display = visible ? '' : 'none';
+      if (visible) visibleCount++;
+    });
+
+    // Hide tier sections where all courses are filtered out
+    document.querySelectorAll<HTMLElement>('.tier-section').forEach((section) => {
+      const visibleCards = section.querySelectorAll<HTMLElement>('.course-card:not([style*="display: none"])');
+      section.style.display = visibleCards.length > 0 ? '' : 'none';
+    });
+
+    noResults?.classList.toggle('hidden', visibleCount > 0);
+  }
+</script>

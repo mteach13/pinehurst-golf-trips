@@ -1,0 +1,282 @@
+[
+  {
+    "tier": "Championship Course",
+    "tierSubtitle": "The Main Event",
+    "slug": "championship",
+    "intro": "The reason most people come to Pinehurst. There's only one course in this tier, and it needs no introduction.",
+    "courses": [
+      {
+        "name": "Pinehurst No. 2",
+        "slug": "pinehurst-no-2",
+        "designer": "Donald Ross",
+        "played": true,
+        "price": "$$$$",
+        "description": "The reason most people come. Donald Ross masterpiece, U.S. Open anchor site (2024, 2029, 2035, 2041, 2047). Crowned greens, iconic bunkering, walking with a caddie is the way to do it. Requires resort stay (minimum 2 nights). Book 12+ months out.",
+        "details": "Green fees roughly $300\u2013600 depending on season, plus a $250 premium on top of package rates. If you only play one course in Pinehurst, this is the one. The crowned greens will humble you, and the caddie experience ties it all together. Walking off 18 knowing you just played the same course as the U.S. Open \u2014 that\u2019s the moment.",
+        "tags": ["Resort course", "Walking with caddie", "Book early"],
+        "image": "/images/no2.jpg"
+      }
+    ]
+  },
+  {
+    "tier": "Premier Courses",
+    "tierSubtitle": "The A-List",
+    "slug": "premier",
+    "intro": "Courses that would be the centerpiece of a golf trip anywhere else. At Pinehurst they share the stage with No. 2.",
+    "courses": [
+      {
+        "name": "Pinehurst No. 4",
+        "slug": "pinehurst-no-4",
+        "designer": "Gil Hanse",
+        "played": false,
+        "price": "$$$$",
+        "description": "Gil Hanse redesign, bold and modern, pot bunkers, excellent conditioning. Consistently praised as one of the best resort courses in the country.",
+        "details": "Resort course \u2014 requires a stay-and-play package. The Hanse redesign gave No. 4 a completely different personality from the other resort courses: wider landing areas but demanding green complexes. The pot bunkers are the signature.",
+        "tags": ["Resort course"]
+      },
+      {
+        "name": "Pinehurst No. 10",
+        "slug": "pinehurst-no-10",
+        "designer": "Tom Doak",
+        "played": false,
+        "price": "$$$$",
+        "description": "Tom Doak design, opened 2024, the newest resort course. Grand in scale, different feel from the rest. $125 premium on top of package rates.",
+        "details": "The newest course in the resort\u2019s rotation and it immediately jumped into conversations about the best courses in the state. Doak\u2019s minimalist style lets the natural terrain do the talking. Expect wide fairways, creative green sites, and a routing that feels like it\u2019s been there for decades.",
+        "tags": ["Resort course", "Opened 2024"]
+      },
+      {
+        "name": "Pine Needles Lodge & Golf Club",
+        "slug": "pine-needles",
+        "designer": "Donald Ross",
+        "played": true,
+        "price": "$$$",
+        "description": "Donald Ross design, four-time U.S. Women\u2019s Open host. Pure layout, walkable, and one of the most enjoyable rounds you\u2019ll play in the Sandhills.",
+        "details": "Off-resort, with its own lodging and packages. Pine Needles is the kind of course that makes you fall in love with golf design. Ross routed it through towering longleaf pines with gentle elevation changes that keep every hole interesting. The greens are firm and fair, the walk is beautiful, and the lodge has that old-school golf-trip charm. One of my favorites in the area.",
+        "tags": ["Off-resort", "Own lodging available"],
+        "image": "/images/pine-needles.jpg",
+        "imagePosition": "center 75%"
+      },
+      {
+        "name": "Southern Pines Golf Club",
+        "slug": "southern-pines",
+        "designer": "Donald Ross (restored)",
+        "played": true,
+        "price": "$$$",
+        "description": "Recently restored Ross design, classic bunkering, great value relative to quality. Strong word-of-mouth reputation.",
+        "details": "This course punches way above its price point. The restoration brought back Ross\u2019s original bunkering and green complexes, and the result is a course that feels both historic and modern. The conditioning has been excellent every time I\u2019ve played it. If you want a pure golf experience without the resort premium, Southern Pines is the move.",
+        "tags": ["Off-resort"],
+        "image": "/images/southern-pines.jpg"
+      },
+      {
+        "name": "Mid Pines Inn & Golf Club",
+        "slug": "mid-pines",
+        "designer": "Donald Ross",
+        "played": false,
+        "price": "$$$",
+        "description": "Another Ross design, vintage feel, consistently ranked top 25\u201330 in North Carolina. Part of the Pine Needles family.",
+        "details": "Lodge stay available. Mid Pines shares ownership with Pine Needles, and the two courses make for a great pairing if you\u2019re staying at either property. The layout has a tighter, more intimate feel \u2014 tree-lined corridors, subtle green contours, and a walk that rewards good course management.",
+        "tags": ["Off-resort", "Own lodging available"]
+      },
+      {
+        "name": "Tobacco Road Golf Club",
+        "slug": "tobacco-road",
+        "designer": "Mike Strantz",
+        "played": true,
+        "price": "$$$",
+        "description": "Polarizing, dramatic, unlike anything you\u2019ve played. Towering sandhills, blind shots, massive bunkers. Love-it-or-hate-it but everyone should play it once.",
+        "details": "Tobacco Road is the course people can\u2019t stop talking about, for better or worse. Strantz carved it out of an old sand quarry and leaned all the way into the drama: blind tee shots over dunes, greens tucked into natural amphitheaters, and waste areas that feel like you\u2019re playing on the moon. I loved it. Some of my buddies hated it. But nobody was bored, and that\u2019s worth something. Play it at least once.",
+        "tags": ["Off-resort", "Polarizing", "Must-play-once"],
+        "image": "/images/tobacco-road.jpg",
+        "imagePosition": "center 63%"
+      }
+    ]
+  },
+  {
+    "tier": "Great Resort Courses",
+    "tierSubtitle": "Strong Plays",
+    "slug": "great-resort",
+    "intro": "Excellent courses that round out a trip. You won\u2019t regret playing any of these.",
+    "courses": [
+      {
+        "name": "Pinehurst No. 8",
+        "slug": "pinehurst-no-8",
+        "designer": "Tom Fazio",
+        "played": false,
+        "price": "$$$",
+        "description": "Tom Fazio design, player-friendly with elevated tees and wide fairways. Consistently ranked in Golf Digest\u2019s Top 100 Public.",
+        "details": "No. 8 is the resort course that makes everyone feel good about their game. Fazio\u2019s elevated tees give you great sight lines, the fairways are generous, and the greens are receptive. It\u2019s not as architecturally daring as No. 4 or No. 2, but it delivers a polished, enjoyable round every time.",
+        "tags": ["Resort course", "Top 100 Public"]
+      },
+      {
+        "name": "Pinehurst No. 3",
+        "slug": "pinehurst-no-3",
+        "designer": "Donald Ross",
+        "played": true,
+        "price": "$$",
+        "description": "Shortest resort course, but a great warmup for No. 2. Tiny elevated greens demand precision and sharpen your short game.",
+        "details": "Don\u2019t let the shorter yardage fool you. No. 3 is a masterclass in green design \u2014 small, elevated targets that will expose any weakness in your approach game. I played it the day before No. 2 and it was the perfect prep: same crowned-green philosophy, lower stakes, and a confidence boost if you score well. The walk is pleasant and the pace is quick.",
+        "tags": ["Resort course", "Great warmup"],
+        "image": "/images/no3.jpg",
+        "imagePosition": "center 60%"
+      },
+      {
+        "name": "The Cradle",
+        "slug": "the-cradle",
+        "designer": "Gil Hanse",
+        "played": true,
+        "price": "$",
+        "description": "9-hole short course, holes range 60\u2013130 yards. The most fun you can have with your buddies at Pinehurst.",
+        "details": "The Cradle is pure joy. Nine short holes, grab a wedge and a putter, and go have fun. It\u2019s walk-up play \u2014 you don\u2019t even have to be a resort guest. The holes are real golf holes in miniature, with real bunkers and real green contours. Play it at golden hour with a drink in hand. This is the thing people remember most about their Pinehurst trip, and I\u2019m not exaggerating.",
+        "tags": ["Resort course", "Walk-up play", "Don't miss"],
+        "image": "/images/cradle.jpg",
+        "imagePosition": "center 75%"
+      }
+    ]
+  },
+  {
+    "tier": "Area Courses Worth Playing",
+    "tierSubtitle": "Local Picks",
+    "slug": "area-courses",
+    "intro": "Off-resort courses that are well-regarded and offer good value. These are the courses locals and repeat visitors know about.",
+    "courses": [
+      {
+        "name": "Mid South Club",
+        "slug": "mid-south",
+        "designer": "Arnold Palmer",
+        "played": false,
+        "price": "$$",
+        "description": "Arnold Palmer design, part of the Talamore Resort family. Attractive setting with longleaf pines and lakes.",
+        "details": "Accessible via stay-and-play packages through Talamore Resort. Mid South offers a more manicured, country-club feel compared to the sandy, natural aesthetic of the Pinehurst resort courses. Lakes and longleaf pines frame the holes, and the conditioning is typically strong.",
+        "tags": ["Off-resort", "Stay-and-play available"]
+      },
+      {
+        "name": "Talamore Golf Club",
+        "slug": "talamore",
+        "designer": "Rees Jones",
+        "played": false,
+        "price": "$$",
+        "description": "Rees Jones design, consistently ranked among the top public courses in NC. Known for its stay-and-play packages and (formerly) its llama caddies.",
+        "details": "Yes, llama caddies were a real thing here \u2014 they\u2019re retired now, but the legend lives on. The course itself is a solid Rees Jones design with good variety, well-bunkered greens, and a routing that makes good use of the natural terrain. The stay-and-play packages with Mid South make this a popular choice for groups looking for value.",
+        "tags": ["Off-resort", "Stay-and-play available"]
+      },
+      {
+        "name": "Tot Hill Farm",
+        "slug": "tot-hill-farm",
+        "designer": "Mike Strantz",
+        "played": false,
+        "price": "$$",
+        "description": "Mike Strantz design, about 45 minutes from Pinehurst. If you loved Tobacco Road, this is more Strantz creativity. Dramatic elevation changes.",
+        "details": "Tot Hill Farm is Strantz\u2019s other Sandhills-area creation, and it shares Tobacco Road\u2019s sense of drama and adventure. The elevation changes here are even more pronounced \u2014 you\u2019ll hit shots from hilltops with panoramic views and play approach shots into amphitheater greens. Worth the drive if you\u2019re a Strantz fan or just want something different.",
+        "tags": ["Off-resort", "45 min drive"]
+      }
+    ]
+  },
+  {
+    "tier": "More Options",
+    "tierSubtitle": "Fill Your Card",
+    "slug": "more-options",
+    "intro": "If you\u2019re staying 4+ days and want to play as much as possible, these courses round out a longer trip.",
+    "courses": [
+      {
+        "name": "Pinehurst No. 9",
+        "slug": "pinehurst-no-9",
+        "designer": "Jack Nicklaus",
+        "played": false,
+        "price": "$$$",
+        "description": "Ranked ~35th in NC. Solid resort course, a step below No. 8.",
+        "details": "No. 9 is a perfectly fine resort course that suffers mainly from the company it keeps. In any other resort, it\u2019d be a headline act. At Pinehurst, it\u2019s a supporting player. The Nicklaus design has some memorable holes and the conditioning is resort-standard.",
+        "tags": ["Resort course"]
+      },
+      {
+        "name": "Pinehurst No. 1",
+        "slug": "pinehurst-no-1",
+        "designer": "Donald Ross",
+        "played": false,
+        "price": "$$",
+        "description": "Where it all started. Historic but modest. A nice walk through history.",
+        "details": "The original. Course No. 1 dates to 1898 and it\u2019s more of a historical experience than a design challenge. The holes are short and straightforward, but walking where it all began has its own appeal. Best for golf history buffs or as a light warmup round.",
+        "tags": ["Resort course", "Historic"]
+      },
+      {
+        "name": "Pinehurst No. 5",
+        "slug": "pinehurst-no-5",
+        "designer": "Ellis Maples",
+        "played": true,
+        "price": "$$",
+        "description": "Fun layout, good for a lighter round. Not the strongest resort offering but enjoyable.",
+        "details": "No. 5 is a pleasant, unassuming course that\u2019s good for a day when you want to play without the intensity of No. 2 or No. 4. The layout winds through pines with some water features, and the greens are more forgiving than you\u2019ll find on the marquee courses. I played it on a trip where we\u2019d already tackled No. 2 and No. 3, and it was a nice change of pace.",
+        "tags": ["Resort course"],
+        "image": "/images/no5.jpg",
+        "imagePosition": "center 80%"
+      },
+      {
+        "name": "Pinehurst No. 6",
+        "slug": "pinehurst-no-6",
+        "designer": "Tom Fazio / George Fazio",
+        "played": false,
+        "price": "$$$",
+        "description": "Tom Fazio design, more rugged and undulating than the other resort courses. A few miles from the main clubhouse.",
+        "details": "No. 6 sits apart from the main resort campus, which gives it a quieter, more secluded feel. The terrain is hillier than most Pinehurst courses, with more dramatic elevation changes. It\u2019s a solid course that doesn\u2019t get much buzz but delivers a good round.",
+        "tags": ["Resort course"]
+      },
+      {
+        "name": "Pinehurst No. 7",
+        "slug": "pinehurst-no-7",
+        "designer": "Rees Jones",
+        "played": false,
+        "price": "$$$",
+        "description": "Rees Jones design, ranked around 50th in NC. Challenging back nine.",
+        "details": "No. 7 has a reputation for a tough back nine with some demanding carries and well-protected greens. The front nine is more gentle, setting you up for a sterner test coming home. It\u2019s a good course, but with limited days, the premier courses should take priority.",
+        "tags": ["Resort course"]
+      },
+      {
+        "name": "Legacy Golf Links",
+        "slug": "legacy",
+        "designer": "Nicklaus Design",
+        "played": false,
+        "price": "$$",
+        "description": "Nicklaus Design, classic Sandhills feel, good value.",
+        "details": "Legacy offers a traditional Sandhills golf experience at a fair price. The design is straightforward and well-maintained, with sandy waste areas and longleaf pines framing the holes. A solid choice for filling an extra day on the itinerary.",
+        "tags": ["Off-resort"]
+      },
+      {
+        "name": "Longleaf Golf & Family Club",
+        "slug": "longleaf",
+        "designer": "Dan Maples",
+        "played": false,
+        "price": "$",
+        "description": "Dan Maples design, described as the \u201cmost playable course in the Sandhills.\u201d",
+        "details": "Longleaf lives up to its reputation as the friendliest course in the area. Wide fairways, minimal forced carries, and approachable greens make it a great option for higher-handicap players or anyone looking for a relaxing round. The price is right, too.",
+        "tags": ["Off-resort", "Budget-friendly"]
+      },
+      {
+        "name": "Hyland Golf Club",
+        "slug": "hyland",
+        "designer": "Tom Jackson",
+        "played": false,
+        "price": "$",
+        "description": "Highest elevation in the area, sparkling water features, affordable.",
+        "details": "Hyland\u2019s elevated terrain gives it views you won\u2019t find on most Sandhills courses. The water features are attractive, the layout is fair, and the green fee won\u2019t dent your wallet. A good budget option for an extra round.",
+        "tags": ["Off-resort", "Budget-friendly"]
+      }
+    ]
+  },
+  {
+    "tier": "Don\u2019t Skip This",
+    "tierSubtitle": "The 19th Hole",
+    "slug": "dont-skip",
+    "intro": "Not a golf course, but don\u2019t you dare leave Pinehurst without doing this.",
+    "courses": [
+      {
+        "name": "Thistle Dhu Putting Course",
+        "slug": "thistle-dhu",
+        "designer": "Gil Hanse",
+        "played": true,
+        "price": "Free",
+        "description": "Free. 18 holes. No greens fees. Grab a putter, grab a drink, and walk up.",
+        "details": "Designed by Gil Hanse in front of the main clubhouse verandah. Inspired by the original 1916 Thistle Dhu \u2014 widely considered America\u2019s first miniature golf course. The name is a play on \u201cthis\u2019ll do.\u201d Don\u2019t skip it. It\u2019s the kind of thing that turns a good trip into a great story. Seriously \u2014 you\u2019ll be standing on a putting green with a drink, looking out at the clubhouse, trash-talking your buddies. It doesn\u2019t get better than that.",
+        "tags": ["Free", "Walk-up", "Don't miss"]
+      }
+    ]
+  }
+]

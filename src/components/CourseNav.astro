@@ -1,0 +1,31 @@
+---
+import courseTiers from '../data/courses.json';
+---
+
+<nav aria-label="Course navigation" class="course-nav-scroll sticky top-16 max-h-[calc(100vh-5rem)] overflow-y-auto pr-2">
+  <p class="text-xs font-semibold uppercase tracking-widest text-olive mb-4">On this page</p>
+  <ul class="space-y-4">
+    {courseTiers.map((tier) => (
+      <li>
+        <a
+          href={`#${tier.slug}`}
+          class="text-sm font-semibold text-dark-green hover:text-olive transition-colors"
+        >
+          {tier.tier}
+        </a>
+        <ul class="mt-1.5 space-y-1 border-l border-dark-green/10 pl-3">
+          {tier.courses.map((course) => (
+            <li>
+              <a
+                href={`#${course.slug}`}
+                class="text-xs text-dark-green/60 hover:text-dark-green transition-colors block py-0.5"
+              >
+                {course.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ul>
+</nav>

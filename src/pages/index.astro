@@ -1,17 +1,106 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Pinehurst Golf Trips — Plan Your Sandhills Golf Getaway"
+  description="The independent, opinionated guide to planning a golf trip to Pinehurst, Southern Pines, and the Sandhills of North Carolina. Course reviews, itinerary tips, dining, and lodging."
+>
+  {/* Hero */}
+  <section class="relative min-h-[70vh] flex items-center">
+    <img
+      src="/images/hero.jpg"
+      alt="View of a Pinehurst golf course fairway through longleaf pines"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black/35"></div>
+    <div class="relative mx-auto max-w-5xl px-6 py-20 md:py-28 w-full">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-3xl">
+        Plan Your Pinehurst Golf&nbsp;Trip
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+        An honest, independent guide to golf in the Sandhills of North Carolina &mdash;
+        covering Pinehurst, Southern Pines, Aberdeen, and the courses that make this
+        the best golf destination on the East Coast.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a
+          href="/courses"
+          class="inline-flex items-center justify-center bg-white text-dark-green font-semibold text-sm tracking-wide uppercase px-6 py-3 rounded-full hover:bg-white/90 transition-colors"
+        >
+          Browse Courses
+        </a>
+        <a
+          href="/guide"
+          class="inline-flex items-center justify-center border-2 border-white text-white font-semibold text-sm tracking-wide uppercase px-6 py-3 rounded-full hover:bg-white hover:text-dark-green transition-colors"
+        >
+          First-Timer's Guide
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* Intro */}
+  <section class="mx-auto max-w-3xl px-6 py-16 md:py-20">
+    <h2 class="text-2xl md:text-3xl text-olive font-bold">
+      What you won't find here
+    </h2>
+    <p class="mt-4">
+      This isn't the resort's marketing site, and it's not a booking engine. It's the guide
+      I wish existed when I was planning my first Pinehurst trip &mdash; real costs, honest course
+      rankings, and practical advice from someone who's actually walked the fairways.
+    </p>
+    <p class="mt-4">
+      I'll tell you which courses are worth the green fee, which ones you can skip, and what
+      to do with the hours between rounds. If I haven't played a course myself, I'll say so
+      and tell you what the consensus says instead.
+    </p>
+  </section>
+
+  {/* Section cards */}
+  <section class="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
+    <div class="grid md:grid-cols-3 gap-8">
+      {/* Courses */}
+      <a href="/courses" class="group block no-underline bg-dark-green p-8 hover:bg-dark-green/90 transition-colors">
+        <h3 class="text-xl text-white font-bold">
+          Course Guide
+        </h3>
+        <p class="mt-3 text-sm text-cream/70 leading-relaxed">
+          20+ courses organized by tier &mdash; from the championship stage of No.&nbsp;2 to local
+          favorites worth the detour. Honest takes, real prices.
+        </p>
+        <span class="inline-block mt-4 text-sm font-medium text-cream/50 group-hover:text-white transition-colors">
+          View all courses &rarr;
+        </span>
+      </a>
+
+      {/* Guide */}
+      <a href="/guide" class="group block no-underline bg-dark-green p-8 hover:bg-dark-green/90 transition-colors">
+        <h3 class="text-xl text-white font-bold">
+          First-Timer's Guide
+        </h3>
+        <p class="mt-3 text-sm text-cream/70 leading-relaxed">
+          Everything you need for your first trip &mdash; when to go, how to book, caddie tips,
+          packing, and the FAQ questions everyone asks.
+        </p>
+        <span class="inline-block mt-4 text-sm font-medium text-cream/50 group-hover:text-white transition-colors">
+          Read the guide &rarr;
+        </span>
+      </a>
+
+      {/* Contact */}
+      <a href="/contact" class="group block no-underline bg-dark-green p-8 hover:bg-dark-green/90 transition-colors">
+        <h3 class="text-xl text-white font-bold">
+          Ask a Question
+        </h3>
+        <p class="mt-3 text-sm text-cream/70 leading-relaxed">
+          Planning a trip and not sure where to start? Drop a question and I'll
+          help you figure out courses, timing, budget &mdash; whatever you need.
+        </p>
+        <span class="inline-block mt-4 text-sm font-medium text-cream/50 group-hover:text-white transition-colors">
+          Get in touch &rarr;
+        </span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
