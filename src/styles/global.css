@@ -8,8 +8,8 @@
   --color-dusty-blue: #7A8FAA;
   --color-link: #4A6080;
 
-  --font-sans: 'Lato', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Josefin Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-heading: 'DM Serif Display', Georgia, serif;
 }
 
 @layer base {
@@ -46,6 +46,21 @@
 
 .prose a:hover {
   color: var(--color-dark-green);
+}
+
+.prose p + p,
+.prose p + ul,
+.prose ul + p {
+  margin-top: 1.25em;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+
+.prose li + li {
+  margin-top: 0.5em;
 }
 
 /* Subtle scrollbar for the course sidebar nav */

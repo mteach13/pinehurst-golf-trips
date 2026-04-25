@@ -9,23 +9,23 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="absolute top-0 left-0 right-0 z-50 px-6 pt-4">
-  <nav class="mx-auto max-w-5xl bg-cream rounded-full px-8 pt-4 pb-3 flex items-baseline justify-between shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
-    <a href="/" class="font-heading text-xl font-bold tracking-tight text-dark-green hover:text-olive transition-colors">
+<header class="fixed top-0 left-0 right-0 z-50 bg-dark-green">
+  <nav class="mx-auto max-w-5xl px-6 py-3.5 flex items-center justify-between">
+    <a href="/" class="font-heading text-xl font-normal tracking-tight text-cream hover:text-white transition-colors">
       Pinehurst Golf Trips
     </a>
 
     {/* Desktop nav */}
-    <ul class="hidden md:flex items-baseline gap-8">
+    <ul class="hidden md:flex items-center gap-8">
       {navLinks.map(({ href, label }) => (
         <li>
           <a
             href={href}
             class:list={[
-              'text-sm font-medium tracking-wide uppercase transition-colors',
+              'text-xs font-medium tracking-widest uppercase transition-colors',
               currentPath === href || currentPath.startsWith(href + '/')
-                ? 'text-olive'
-                : 'text-dark-green/70 hover:text-dark-green',
+                ? 'text-steel-blue'
+                : 'text-cream/70 hover:text-white',
             ]}
           >
             {label}
@@ -37,7 +37,7 @@ const currentPath = Astro.url.pathname;
     {/* Mobile menu button */}
     <button
       id="mobile-menu-btn"
-      class="md:hidden p-2 -mr-2 text-dark-green"
+      class="md:hidden p-2 -mr-2 text-cream"
       aria-label="Toggle navigation menu"
       aria-expanded="false"
     >
@@ -49,17 +49,17 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   {/* Mobile menu */}
-  <div id="mobile-menu" class="hidden md:hidden mx-auto max-w-5xl mt-2 bg-cream rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.15)] px-8 py-4">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 px-6 py-4">
     <ul class="space-y-3">
       {navLinks.map(({ href, label }) => (
         <li>
           <a
             href={href}
             class:list={[
-              'block text-sm font-medium tracking-wide uppercase transition-colors',
+              'block text-xs font-medium tracking-widest uppercase transition-colors',
               currentPath === href || currentPath.startsWith(href + '/')
-                ? 'text-olive'
-                : 'text-dark-green/70 hover:text-dark-green',
+                ? 'text-steel-blue'
+                : 'text-cream/70 hover:text-white',
             ]}
           >
             {label}
