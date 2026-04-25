@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Ask a Question — Pinehurst Golf Trip Help"
+  description="Planning a golf trip to Pinehurst? Ask a question about courses, lodging, itineraries, or anything else. I'll help you figure it out."
+>
+  <section class="pt-28 pb-20 md:pt-32 md:pb-28 px-6">
+    <div class="mx-auto max-w-2xl">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-green">
+        Ask a Question
+      </h1>
+      <p class="mt-4 text-lg text-dark-green/70 leading-relaxed">
+        Planning a trip and not sure where to start? Have a question about a specific course,
+        the best time to visit, how to stretch your budget, or even a suggestion of something you'd like to see on this site? Send it over and I'll do my
+        best to help.
+      </p>
+
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="mt-10 space-y-6"
+      >
+        {/* Honeypot field for spam prevention — hidden from real users */}
+        <p class="hidden">
+          <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <div>
+          <label for="name" class="block text-sm font-semibold text-dark-green mb-2">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full bg-white border border-dark-green/15 rounded-lg px-6 py-4 text-dark-green placeholder:text-dark-green/30 focus:outline-none focus:border-olive/50 focus:ring-1 focus:ring-olive/50 transition-colors"
+            placeholder="Your name"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-semibold text-dark-green mb-2">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full bg-white border border-dark-green/15 rounded-lg px-6 py-4 text-dark-green placeholder:text-dark-green/30 focus:outline-none focus:border-olive/50 focus:ring-1 focus:ring-olive/50 transition-colors"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-semibold text-dark-green mb-2">
+            Your question
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="5"
+            class="w-full bg-white border border-dark-green/15 rounded-lg px-6 py-4 text-dark-green placeholder:text-dark-green/30 focus:outline-none focus:border-olive/50 focus:ring-1 focus:ring-olive/50 transition-colors resize-y"
+            placeholder="What do you want to know about planning a Pinehurst golf trip?"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="inline-flex items-center justify-center bg-olive text-white font-semibold text-sm tracking-wide uppercase px-8 py-3 rounded-full hover:bg-olive/90 transition-colors"
+        >
+          Send Question
+        </button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
