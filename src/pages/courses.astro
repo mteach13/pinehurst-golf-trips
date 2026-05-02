@@ -19,6 +19,9 @@ import courseTiers from '../data/courses.json';
         20+ courses in the Pinehurst area, organized from the must-plays to the fill-your-card options.
         Honest takes, real prices, and clear labels on what I've played versus what I'm summarizing from research.
       </p>
+      <p class="mt-4 text-lg text-dark-green/70 max-w-2xl leading-relaxed">
+        <strong class="text-dark-green">A note on resort access:</strong> Most Pinehurst Resort courses (No. 2, 4, 6, 7, 8, 9, 10) require a resort stay to play. No. 1, No. 3, No. 5, and The Cradle are open to non-guests, but you can't book advance tee times without staying on property — you'll need to call the day before or day of. Thistle Dhu is walk-up anytime.
+      </p>
 
       {/* Price tier legend */}
       <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-dark-green/60">
@@ -26,7 +29,8 @@ import courseTiers from '../data/courses.json';
         <span><strong class="text-olive">$</strong> = under $75</span>
         <span><strong class="text-olive">$$</strong> = $75–150</span>
         <span><strong class="text-olive">$$$</strong> = $150–300</span>
-        <span><strong class="text-olive">$$$$</strong> = $300+</span>
+        <span><strong class="text-olive">$$$$</strong> = $300–500</span>
+        <span><strong class="text-olive">$$$$$</strong> = $500+</span>
       </div>
 
       {/* Filters */}
@@ -44,6 +48,9 @@ import courseTiers from '../data/courses.json';
         </button>
         <button data-filter="price" data-value="$$$$" class="filter-btn text-xs font-medium border border-dark-green/15 text-dark-green/60 px-3 py-1.5 rounded-full hover:border-olive/40 transition-colors">
           $$$$
+        </button>
+        <button data-filter="price" data-value="$$$$$" class="filter-btn text-xs font-medium border border-dark-green/15 text-dark-green/60 px-3 py-1.5 rounded-full hover:border-olive/40 transition-colors">
+          $$$$$
         </button>
 
         <span class="w-px h-5 bg-dark-green/10 mx-1"></span>
@@ -168,7 +175,7 @@ import courseTiers from '../data/courses.json';
       const cardLocation = card.dataset.location || '';
 
       // Always show courses with non-standard pricing (e.g. "Free")
-      const exempt = !['$', '$$', '$$$', '$$$$'].includes(cardPrice);
+      const exempt = !['$', '$$', '$$$', '$$$$', '$$$$$'].includes(cardPrice);
       if (exempt) { visibleCount++; return; }
 
       const matchesPrice = filters.price.size === 0 || filters.price.has(cardPrice);
