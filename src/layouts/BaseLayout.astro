@@ -40,5 +40,8 @@ const { title, description, canonicalURL, ogImage } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ce0e8ea6cabb4a1d89d631bd1ca80e45"}'></script>
+    <!-- End Cloudflare Web Analytics -->
   </body>
 </html>
