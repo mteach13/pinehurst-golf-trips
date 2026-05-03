@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import heroImage from '../assets/images/hero.jpg';
 ---
 
 <BaseLayout
@@ -8,10 +10,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   {/* Hero */}
   <section class="relative min-h-[70vh] flex items-center">
-    <img
-      src="/images/hero.jpg"
+    <Image
+      src={heroImage}
       alt="View of a Pinehurst golf course fairway through longleaf pines"
       class="absolute inset-0 w-full h-full object-cover"
+      widths={[640, 1024, 1536, 2048]}
+      sizes="100vw"
+      quality={75}
+      format="webp"
     />
     <div class="absolute inset-0 bg-black/35"></div>
     <div class="relative mx-auto max-w-5xl px-6 py-20 md:py-28 w-full">

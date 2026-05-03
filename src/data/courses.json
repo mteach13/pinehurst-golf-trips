@@ -14,7 +14,7 @@
         "description": "The reason most people come. Donald Ross masterpiece, U.S. Open anchor site (2024, 2029, 2035, 2041, 2047). Crowned greens, iconic bunkering, walking with a caddie is the way to do it. Requires resort stay (minimum 2 nights). Book 12+ months out.",
         "details": "Green fees roughly $300\u2013600 depending on season, plus a $250 premium on top of package rates. If you only play one course in Pinehurst, this is the one. The crowned greens will humble you, and the caddie experience ties it all together. Walking off 18 knowing you just played the same course as the U.S. Open \u2014 that\u2019s the moment.",
         "tags": ["Resort course", "Walking with caddie", "Book early"],
-        "image": "/images/no2.jpg"
+        "image": "no2.jpg"
       }
     ]
   },
@@ -53,7 +53,7 @@
         "description": "Donald Ross design, four-time U.S. Women\u2019s Open host. Pure layout, walkable, and one of the most enjoyable rounds you\u2019ll play in the Sandhills.",
         "details": "Off-resort, with its own lodging and packages. Pine Needles is the kind of course that makes you fall in love with golf design. Ross routed it through towering longleaf pines with gentle elevation changes that keep every hole interesting. The greens are firm and fair, the walk is beautiful, and the lodge has that old-school golf-trip charm. One of my favorites in the area.",
         "tags": ["Off-resort", "Own lodging available"],
-        "image": "/images/pine-needles.jpg",
+        "image": "pine-needles.jpg",
         "imagePosition": "center 75%"
       },
       {
@@ -65,7 +65,7 @@
         "description": "Recently restored Ross design, classic bunkering, great value relative to quality. Strong word-of-mouth reputation.",
         "details": "This course punches way above its price point. The restoration brought back Ross\u2019s original bunkering and green complexes, and the result is a course that feels both historic and modern. The conditioning has been excellent every time I\u2019ve played it. If you want a pure golf experience without the resort premium, Southern Pines is the move.",
         "tags": ["Off-resort"],
-        "image": "/images/southern-pines.jpg"
+        "image": "southern-pines.jpg"
       },
       {
         "name": "Mid Pines Inn & Golf Club",
@@ -86,7 +86,7 @@
         "description": "Polarizing, dramatic, unlike anything you\u2019ve played. Towering sandhills, blind shots, massive bunkers. Love-it-or-hate-it but everyone should play it once.",
         "details": "Tobacco Road is the course people can\u2019t stop talking about, for better or worse. Strantz carved it out of an old sand quarry and leaned all the way into the drama: blind tee shots over dunes, greens tucked into natural amphitheaters, and waste areas that feel like you\u2019re playing on the moon. I loved it. Some of my buddies hated it. But nobody was bored, and that\u2019s worth something. Play it at least once.",
         "tags": ["Off-resort", "Polarizing", "Must-play-once"],
-        "image": "/images/tobacco-road.jpg",
+        "image": "tobacco-road.jpg",
         "imagePosition": "center 63%"
       }
     ]
@@ -116,7 +116,7 @@
         "description": "Shortest resort course, but a great warmup for No. 2. Tiny elevated greens demand precision and sharpen your short game.",
         "details": "Don\u2019t let the shorter yardage fool you. No. 3 is a masterclass in green design \u2014 small, elevated targets that will expose any weakness in your approach game. I played it the day before No. 2 and it was the perfect prep: same crowned-green philosophy, lower stakes, and a confidence boost if you score well. The walk is pleasant and the pace is quick.",
         "tags": ["Resort course", "Great warmup"],
-        "image": "/images/no3.jpg",
+        "image": "no3.jpg",
         "imagePosition": "center 60%"
       },
       {
@@ -128,7 +128,7 @@
         "description": "9-hole short course, holes range 60\u2013130 yards. The most fun you can have with your buddies at Pinehurst.",
         "details": "The Cradle is pure joy. Nine short holes, grab a wedge and a putter, and go have fun. It\u2019s walk-up play \u2014 you don\u2019t even have to be a resort guest. The holes are real golf holes in miniature, with real bunkers and real green contours. Play it at golden hour with a drink in hand. This is the thing people remember most about their Pinehurst trip, and I\u2019m not exaggerating.",
         "tags": ["Resort course", "Walk-up play", "Don't miss"],
-        "image": "/images/cradle.jpg",
+        "image": "cradle.jpg",
         "imagePosition": "center 75%"
       }
     ]
@@ -206,7 +206,7 @@
         "description": "Fun layout, good for a lighter round. Not the strongest resort offering but enjoyable.",
         "details": "No. 5 is a pleasant, unassuming course that\u2019s good for a day when you want to play without the intensity of No. 2 or No. 4. The layout winds through pines with some water features, and the greens are more forgiving than you\u2019ll find on the marquee courses. I played it on a trip where we\u2019d already tackled No. 2 and No. 3, and it was a nice change of pace.",
         "tags": ["Resort course"],
-        "image": "/images/no5.jpg",
+        "image": "no5.jpg",
         "imagePosition": "center 80%"
       },
       {

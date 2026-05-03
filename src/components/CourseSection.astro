@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   name: string;
   slug: string;
@@ -16,16 +18,24 @@ interface Props {
 const { name, slug, designer, played, price, description, details, tags, image, imageAlt, imagePosition } = Astro.props;
 
 const isResort = tags.includes('Resort course');
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*.{jpg,jpeg,png,webp}', { eager: true });
+
+const resolvedImage = image ? images[`../assets/images/${image}`]?.default : undefined;
 ---
 
 <article id={slug} class="course-card scroll-mt-28" data-price={price} data-location={isResort ? 'resort' : 'off-resort'}>
   <div class="bg-white border border-dark-green/10 rounded-lg overflow-hidden">
-    {image && (
-      <img
-        src={image}
+    {resolvedImage && (
+      <Image
+        src={resolvedImage}
         alt={imageAlt || `${name} golf course`}
         class="w-full h-48 md:h-56 object-cover"
         style={imagePosition ? `object-position: ${imagePosition}` : undefined}
+        widths={[400, 640, 800]}
+        sizes="(max-width: 1024px) 100vw, 800px"
+        quality={75}
+        format="webp"
         loading="lazy"
       />
     )}
